@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
 
-export default conbineReducers({
+export default combineReducers({
   auth: () => { return {} }
 });
