@@ -9,7 +9,7 @@ class ReviewScreen extends Component {
     title: 'Review Jobs',
     headerStyle: {
         //If the app is running on Android assign 24 to marginTop, if not, assign 0 to marginTop
-        paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight
+        marginTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight
     },
     headerRight: (
       <Button
@@ -19,7 +19,7 @@ class ReviewScreen extends Component {
         color='rgba(0,122,255,1)'
       />
     )
-  })
+  }) 
 
   render() {
     return (
