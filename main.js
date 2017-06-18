@@ -37,9 +37,6 @@ class App extends React.Component {
           })
       }
     }, {
-        tabBarPosition: 'bottom',
-        swipeEnabled: false,
-        animationEnabled: false,
         lazy: true,
         navigationOptions: {
           tabBarVisible: false
