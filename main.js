@@ -32,18 +32,18 @@ class App extends React.Component {
               settings: { screen: SettingsScreen }
             })
           }
-        },
-          {
-            tabBarPosition: 'bottom',
-            lazyLoad: true
+        }, {
+            tabBarPosition: 'bottom'
           })
       }
-    },
-      {
+    }, {
         tabBarPosition: 'bottom',
         swipeEnabled: false,
-        lazyLoad: true,
-        animationEnabled: false
+        animationEnabled: false,
+        lazy: true,
+        navigationOptions: {
+          tabBarVisible: false
+        }
       });
 
     return (
