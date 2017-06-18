@@ -2,7 +2,9 @@ import Expo from 'expo';
 import React from 'react';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import { TabNavigator, StackNavigator } from 'react-navigation';
+import { Provider } from 'react-redux';
 
+import store from './store';
 //Import Screens
 import AuthScreen from './screens/AuthScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
@@ -31,21 +33,25 @@ class App extends React.Component {
             })
           }
         },
-        {
-          tabBarPosition: 'bottom',
-          lazyLoad: true
-        })
+          {
+            tabBarPosition: 'bottom',
+            lazyLoad: true
+          })
       }
     },
-    {
-      tabBarPosition: 'bottom',
-      swipeEnabled: false,
-      lazyLoad: true,
-      animationEnabled: false
-    });
+      {
+        tabBarPosition: 'bottom',
+        swipeEnabled: false,
+        lazyLoad: true,
+        animationEnabled: false
+      });
 
     return (
-        <MainNavigator />
+      <Provider store={store}>
+        <View style={styles.container}>
+          <MainNavigator />
+        </View>
+      </Provider>
     );
   }
 }
