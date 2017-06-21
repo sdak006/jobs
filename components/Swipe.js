@@ -55,7 +55,7 @@ class Swipe extends Component {
   }
 
   forceSwipe(direction) {
-    const x = direction === 'right' ? SCREEN_WIDTH : -SCREEN_WIDTH;
+    const x = direction === 'right' ? SCREEN_WIDTH * 1.5 : -SCREEN_WIDTH * 1.5;
     Animated.timing(this.state.position, {
       toValue: { x, y: 0 },
       duration: SWIPE_OUT_DURATION
@@ -113,7 +113,7 @@ class Swipe extends Component {
       return (
         <Animated.View
           key={item[this.props.keyProp]}
-          style={[styles.cardStyle, { top: 10 * (i - this.state.index), zIndex: -i }]}
+          style={[styles.cardStyle, { zIndex: -i }]}
         >
           {this.props.renderCard(item)}
         </Animated.View>
